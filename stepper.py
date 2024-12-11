@@ -33,6 +33,8 @@ class Stepper:
         # Configure limit switch pin with pull-down resistor
         GPIO.setup(self.LIMIT_SWITCH_PIN, GPIO.IN, pull_up_down=GPIO.PUD_DOWN)
 
+        GPIO.output(self.ENA_PIN, GPIO.LOW)  # Enable the motor driver
+
     def writeData(self, t):
         # Log current time and angle to CSV file
         self.coord_file.write(f"\n{t},{self.curr_angle}")
@@ -61,7 +63,7 @@ class Stepper:
         
         total_steps = 200  # Steps per full rotation (standard for most steppers)
         
-        GPIO.output(self.ENA_PIN, GPIO.LOW)  # Enable the motor driver
+        # GPIO.output(self.ENA_PIN, GPIO.LOW)  # Enable the motor driver
 
         # Set direction based on angle sign
         direction = GPIO.HIGH if angle > 0 else GPIO.LOW
