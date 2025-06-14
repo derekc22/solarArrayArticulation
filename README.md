@@ -42,7 +42,7 @@ This system uses computer vision to detect the sun's position in real-time and a
 - **2x Stepper Motor Drivers** (compatible with PUL/DIR/ENA interface)
 - **2x Limit Switches** (for stepper homing)
 
-### GPIO Pin Configuration
+### Default GPIO Pin Configuration
 ```
 Panel 1:
 - Servo: Pin 40
